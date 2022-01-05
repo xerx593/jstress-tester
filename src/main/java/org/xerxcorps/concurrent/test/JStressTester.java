@@ -68,7 +68,7 @@ public class JStressTester<R> {
     private final Collection<Callable<R>> callables;
 
     /**
-     * TODO: Write doc &amp; example:
+     * TODO: Write doc &amp; example.
      * @param pClazz for printing
      * @param pCycles iteration count
      * @param pPoolSize threadCount
