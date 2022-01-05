@@ -94,4 +94,15 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <scm>
+    <connection>scm:git:https://github.com/xerx593/jstress-tester.git</connection>
+    <developerConnection>scm:git:https://github.com/xerx593/jstress-tester.git</developerConnection>
+    <url>scm:git:https://github.com/xerx593/jstress-tester/</url>
+  </scm>
+  <distributionManagement>
+    <site>
+      <id>github</id>
+      <url>scm:git:https://github.com/xerx593/jstress-tester.git</url>
+    </site>
+  </distributionManagement>
 </project>
