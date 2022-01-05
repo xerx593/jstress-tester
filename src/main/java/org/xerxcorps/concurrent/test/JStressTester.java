@@ -29,9 +29,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * Utility class for stress tests.
  *
@@ -39,11 +36,6 @@ import org.slf4j.LoggerFactory;
  * @author Alex Lutz
  */
 public class JStressTester<R> {
-
-    /**
-     * Static Logger.
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(JStressTester.class);
 
     /**
      * Class of R.
@@ -76,11 +68,11 @@ public class JStressTester<R> {
     private final Collection<Callable<R>> callables;
 
     /**
-     * Blahblah todo.
+     * TODO: Write doc &amp; example:
      * @param pClazz for printing
      * @param pCycles iteration count
      * @param pPoolSize threadCount
-     * @param pCallables jobs of .
+     * @param pCallables jobs of.
      */
     @SafeVarargs
     public JStressTester(Class<R> pClazz, int pCycles, int pPoolSize, Callable<R>... pCallables) {
@@ -112,9 +104,6 @@ public class JStressTester<R> {
                 results.add(result);
             }
             catch (InterruptedException ex) {
-                if (LOG.isWarnEnabled()) {
-                    LOG.warn(ex.getMessage(), ex);
-                }
                 Thread.currentThread().interrupt();
             }
             catch (ExecutionException ex) {
@@ -149,7 +138,7 @@ public class JStressTester<R> {
             pPrintStream.println("no exceptions");
             return;
         }
-        exceptions.forEach((exc) -> pPrintStream.println(exc.getMessage()));
+        exceptions.forEach(pPrintStream::println);
     }
 
     /**
@@ -162,7 +151,7 @@ public class JStressTester<R> {
             pPrintStream.println("no results");
             return;
         }
-        results.forEach((res) -> pPrintStream.println(res));
+        results.forEach(pPrintStream::println);
     }
 
 }
