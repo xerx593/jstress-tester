@@ -19,24 +19,28 @@
  specific language governing permissions and limitations
  under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xerxcorps</groupId>
     <artifactId>xerxcorps-parent</artifactId>
-    <version>1.0.0</version>
-    <relativePath/>
+    <version>1.0.1-SNAPSHOT</version>
+    <relativePath />
   </parent>
   <artifactId>jstress-tester</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>JStress Tester</name>
   <description>A demo for deployment to the Central Repository via OSSRH</description>
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <workingDirectory>/</workingDirectory>
+<!--          <connectionUrl>scm:git:https://github.com/xerx593/jstress-tester.git</connectionUrl>-->
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
@@ -98,6 +102,7 @@
     <connection>scm:git:https://github.com/xerx593/jstress-tester.git</connection>
     <developerConnection>scm:git:https://github.com/xerx593/jstress-tester.git</developerConnection>
     <url>scm:git:https://github.com/xerx593/jstress-tester/</url>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <site>
